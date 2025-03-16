@@ -14,25 +14,25 @@ import com.multipledb.service.DataService;
 @RestController
 @RequestMapping("/api")
 public class DataController {
-	
+
 	private final DataService dataService;
-	
+
 	public DataController(DataService dataService) {
-		this.dataService=dataService;
+		this.dataService = dataService;
 	}
-	
+
 	// Endpoint to save User
 	@PostMapping("/users")
-	public ResponseEntity<UserDTO> saveUser(@RequestBody  UserDTO userDTO){
+	public ResponseEntity<UserDTO> saveUser(@RequestBody UserDTO userDTO) {
 		UserDTO saveUser = dataService.saveUser(userDTO);
-		return new ResponseEntity<>(saveUser,HttpStatus.CREATED);
+		return new ResponseEntity<>(saveUser, HttpStatus.CREATED);
 	}
-	//EndPoint to save Order
+
+	// EndPoint to save Order
 	@PostMapping("/orders")
-	public ResponseEntity<OrderDTO> saveOrder(@RequestBody OrderDTO orderDTO){
+	public ResponseEntity<OrderDTO> saveOrder(@RequestBody OrderDTO orderDTO) {
 		OrderDTO saveOrder = dataService.saveOrder(orderDTO);
-		return new ResponseEntity<>(saveOrder,HttpStatus.CREATED);
+		return new ResponseEntity<>(saveOrder, HttpStatus.CREATED);
 	}
-	
 
 }

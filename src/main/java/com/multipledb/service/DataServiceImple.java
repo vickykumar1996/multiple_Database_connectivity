@@ -14,9 +14,8 @@ import com.multipledb.repository.UserRepository;
 @Service
 public class DataServiceImple implements DataService {
 
-	
 	private final UserRepository userRepository;
-	
+
 	private final OrderRepository orderRepository;
 	private final ModelMapper modelMapper;
 

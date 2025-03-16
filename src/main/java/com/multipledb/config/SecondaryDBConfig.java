@@ -16,8 +16,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
-@EnableJpaRepositories(
-		basePackages = "com.multipledb.repository",entityManagerFactoryRef = "secondaryEntityManger",transactionManagerRef = "secondaryTransactionManager")
+@EnableJpaRepositories(basePackages = "com.multipledb.repository", entityManagerFactoryRef = "secondaryEntityManger", transactionManagerRef = "secondaryTransactionManager")
 public class SecondaryDBConfig {
 	@Bean
 	@ConfigurationProperties(prefix = "spring.datasource.secondary")
